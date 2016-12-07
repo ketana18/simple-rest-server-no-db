@@ -1,0 +1,24 @@
+<script>
+//var hours = 5;
+/*
+Date.prototype.addHours = function(hours) {
+    this.setHours(this.getHours() + parseInt(hours));
+    return this;
+};*/
+
+var date1 = new Date();
+
+date1.addHours = function(hours)
+{
+	date1.setHours(date1.getHours() + hours); 
+	//return this.getHours();
+	//return this.getHours() + parseInt(hours); 
+}
+
+//date1.addHours(10);
+
+//date.addHours(5)
+date1.addHours(8);
+console.log(date1.getHours());
+alert("Hour after adding 5 hours to current hour is -------> " + date1.getHours());
+</script>

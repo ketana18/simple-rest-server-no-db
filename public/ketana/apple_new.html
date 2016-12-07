@@ -1,0 +1,113 @@
+<html>
+<head>
+<style>
+body{
+padding:50px;
+}
+#wrapper{
+	/*border:1px black solid;*/
+	margin:auto;
+	overflow:auto;
+}
+#left{
+	border:1px black solid;
+	padding:20px;
+	width:50%;
+	float:left;
+	box-sizing: border-box;
+	height:250px;
+}
+#right{
+	border:1px black solid;
+	padding:20px;
+	width:50%;
+	float:left;
+	box-sizing: border-box;
+	height:250px;
+}
+.chk{
+	margin :10px;
+}
+span.disp{
+	display:block;
+}
+ul li{
+	display:block;
+	margin:10px;
+}
+</style>
+</head>
+<body>
+<div id="wrapper">
+	<div id="left">
+		<form id="frm" name="frm">
+		<span class="disp"><input class="chk" type="checkbox" name="fruit" id="fruit[]" value="Apple"><span>Apple123</span></span>
+		<span class="disp"><input class="chk" type="checkbox" name="fruit" id="fruit[]" value="Mango"><span>Mango123</span></span>
+		<span class="disp"><input class="chk" type="checkbox" name="fruit" id="fruit[]" value="Grape"><span>Grape</span></span>
+		<span class="disp"><input type="checkbox" name="fruit" id="fruit[]" value="Strawberry" class="chk"><span>Strawberry</span></span>
+		<span class="disp"><input type="checkbox" name="fruit" id="fruit[]" value="Cherry" class="chk"><span>Cherry</span></span>
+		</form>
+	</div>
+<div id="right">
+	<ul id="dispFruit"></ul>
+</div>
+<input type="button" name="btn" id="btn" value="Create New Checkbox">
+</div>
+
+</form>
+<script>
+
+var chk = document.getElementsByName("fruit");
+var btn = document.getElementById("btn");
+var dispFruit = document.getElementById("dispFruit");
+for(var i=0; i<chk.length;i++)
+{
+	chk[i].addEventListener("click",disp);
+}	
+
+function disp(){
+	var val = this.value;
+	if(this.checked)
+	{
+		var ele = document.createElement("li");
+		dispFruit.appendChild(ele);
+		ele.innerHTML = this.nextSibling.innerHTML;
+	}
+	else
+	{
+		var len = dispFruit.childNodes.length;
+		for(var i=0;i<len;i++)
+		{
+			if(this.nextSibling.innerHTML == dispFruit.childNodes[i].innerHTML)
+			{
+				dispFruit.removeChild(dispFruit.childNodes[i]);
+				break;
+			}
+		}
+	}	
+}
+btn.onclick=function(){
+	var getchkval = prompt("Please Enter Checkbox Value/Text");
+	var newchk = document.createElement("input");
+	newchk.setAttribute("type","checkbox");
+	newchk.setAttribute("name","fruit");
+	newchk.setAttribute("id","fruit[]");
+	newchk.setAttribute("class","chk");
+	newchk.setAttribute("value",getchkval);
+	var  newchkval = document.createElement("span");
+	document.getElementById("frm").appendChild(newchk);
+	document.getElementById("frm").appendChild(newchkval);
+	newchkval.innerHTML = getchkval;
+	newchk.addEventListener("click",disp);	
+};
+</script>
+</body>
+</html>
+<!---
+event bubbling
+event capturing
+event object
+event with target
+
+//var target = event.target || event.srcElement
+-->

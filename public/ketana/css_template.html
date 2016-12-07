@@ -1,0 +1,267 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>CSS Template</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+ font:100% Verdana;
+ font-size:12px;
+}
+p{
+	padding:10px 00px;
+}
+a{
+	color:#4279A5;
+}
+#main{
+ width:1000px;
+ margin:auto;
+ border:2px solid lightgrey;
+ /*box-sizing: border-box;*/
+}
+#header{
+ background-color:#4279A5;
+ display:block;
+ padding:10px;
+ color:#ffffff;
+ height:100px;
+}
+#header h1{
+padding:20px 0 0 20px;
+font-weight:normal;
+}
+#header h2{
+padding:10px 0 0 40px;
+font-weight:normal;
+}
+
+h2{
+padding:20px 0px;
+background-color:inherit;
+font-weight:normal;
+}
+
+#nav{
+height:40px;
+line-height:40px;
+width:1000px;
+background:#578bb8;
+color:#ffffff;
+text-align:left;
+/*box-sizing: border-box;*/
+
+}
+
+#nav li{
+display:inline-block;
+padding:0px 10px;
+float:left;
+list-style-type:none;
+border-right:1px solid #ffffff;
+}
+#nav li:hover{
+	 background: #80b0da;
+    color: #ffffff;
+    text-decoration: none;
+}
+#nav .selected, #nav a:hover {
+    background: #80b0da;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#nav li a{
+color:#ffffff;
+}
+
+#left-sec{
+	float:left;
+	width:720px;
+	padding:20px ;
+	/*box-sizing: border-box;*/
+	/*border:1px solid red;*/
+}
+#section1{
+	float:left;
+	width:48%;
+	/*padding:10px ;*/
+	/*box-sizing: border-box;*/
+	/*border:1px solid red;*/
+}
+#section1 ul,ol{
+	margin:0 5px 15px 35px;
+}
+#section1 dt{
+	margin:0 5px 10px 25px;
+	font-weight:bold;
+}
+#section1 dd{
+	margin:0 5px 0px 35px;
+}
+.subsec1{
+	margin-top:10px;
+	background-color:#FFFBFF;
+	padding:15px;
+	border:1px solid grey;
+}
+.note{
+	color:red;
+	font-weight:bold;
+}
+.smalltxt{
+	font-size:0.7em;
+}
+#section2{
+	float:left;
+	width:46%;
+	padding:0 20px ;
+	/*box-sizing: border-box;*/
+	/*border:1px solid red;*/
+}
+
+#sidemenu{
+	float:right;
+	width:195px;
+	padding:20px;
+	display:block;
+}
+#sidemenu ul li{
+	list-style-type:none;
+	padding:10px 0 0 10px;
+	font-weight:bold;
+}
+#sidemenu ul li a{
+	text-decoration:none;
+}
+#sidemenu ul li ul li{
+	padding-left:20px;
+	font-weight:normal;
+}
+
+#footer{
+clear:both;
+width:1000px;
+padding:5px 0;
+margin:0 1px;
+font-size:0.9em;
+color:#f0f0f0;
+background-color:#4279A5;
+text-align:center;
+}
+</style>
+
+</head>
+<body >
+<div id="main">
+ 
+<div id="header">
+<h1>andreas08: ignore the trends</h1>
+<h2>space reserved for your website slogan!</h2>
+</div>
+
+<div id="nav">
+<ul>
+<li class="selected"><a href="#">First page</a></li>
+<li><a href="#">Second</a></li>
+<li><a href="#">Third</a></li>
+<li><a href="#">Fourth</a></li>
+<li><a href="#">Fifth</a></li>
+<li><a href="#">And the last one</a></li>
+</ul>
+</div>
+
+<div id="maincontent">
+ <div id="left-sec">
+  <h2>Welcome To Andreas08!</h2>
+  <p>I get a lot of requests about new open source templates, and this one was created as a response to one of those requests.
+  This template is based on the design of my own website, with only small changes (hopefully improvements!) from my own design. 
+  Among the changes, it is worth to note that this template does not use any images - and browser-based font resizing is fully supported.
+  Other than that, there are no special features or extras, only valid and well-structured XHTML 1.1 and CSS2 code.</p>
+  <p>Current template version: 1.0 (November 28, 2005).</p>
+ <!--</div>-->
+ <section id="section1">
+ <h2>Included Style Examples:</h2>
+<div class="subsec1">
+<h3>Sub-header example</h3>
+<p>This is regular text, which is aligned to the left by default. You can easily change the alignment using the classes .textcenter and .textright on each paragraph.</p>
+<p><span class="note">This is an important note!</span><br />
+<a href="#">This is a link.</a><br />
+<strong>This is strong text.</strong><br />
+<span class="smalltxt">This is small text.</span></p>
+
+<ul>
+  <li>Unordered list option 1</li>
+  <li>Unordered list option 2</li>
+</ul>
+
+<ol>
+  <li>Ordered list option 1</li>
+  <li>Ordered list option 2</li>
+</ol>
+
+<dl>
+  <dt>Definition list dt</dt>
+    <dd>Definition list dd</dd>
+</dl>
+</div>
+ </section>
+ 
+ <section id="section2">
+<h2>About The Designer</h2>
+<p>My name is Andreas Viklund, and I am a 25-years old professional designer living in Jokkmokk, northern Sweden. If you are interested in more advanced templates or custom design services, don't hesitate to contact me for more information!</p>
+
+<h2>Open Source Template</h2>
+<p>This is an open source template, which means that you are free to use it in any way you want to without any obligations. If you decide to use this template, I kindly ask you to leave the "Design by Andreas Viklund" link in the footer. I am also interested in seeing how my templates are used, so feel free to send me an e-mail with a link to your page. If you want more templates to choose from, check out the sites in the "Favorite links" menu to the right!</p>
+<p><strong>Good luck with your new design!</strong></p>
+</section>
+</div>
+
+ <aside id="sidemenu">
+ <div class="subsec1">
+ <strong>Note: </strong>This is a box. It can be used for special messages both in the sidebar and the content section.
+ You could use it for special notes and announcements, but also as a frame for photos. 
+ This space can be used for a short website presentation!
+ </div>
+ 
+ <h2>Nested Menu</h2>
+<ul class="menublock">
+  <li><a href="#">Menu option 1</a></li>
+  <li><a href="#">Menu option 2</a>
+    <ul>
+	  <li><a href="#">Submenu 1</a></li>
+      <li><a href="#">Submenu 2</a></li>
+	</ul></li>
+  <li><a href="#">Menu option 3</a></li>
+  <li><a href="#">Menu option 4</a></li>
+</ul>
+
+<h2>Favorite Links</h2>
+<ul class="menublock">
+  <li><a href="#">Free website templates</a></li>
+  <li><a href="#">Open Web Design</a></li>
+  <li><a href="#">sNews CMS</a></li>
+  <li><a href="#">OSWD.org</a></li>
+</ul>
+
+<div id="search"><h2>Search This Site</h2>
+
+<input value="demo only" name="txtdemo" id="txtdemo" />
+<input type="submit" value="Go!" id="btnsearch" name="btnsearch" />
+
+</div>
+
+ </aside>
+
+
+</div>
+<div id="footer">
+<p>&copy; 2005-2006 <strong>Your Name</strong> | Design by <strong>Andreas Viklund</strong></p>
+<p>Courtesy <strong>Open Web Design</strong>Thanks to <strong>Florida Vacation Homes</strong>
+</div>
+ </div>
+</body>
+</html>

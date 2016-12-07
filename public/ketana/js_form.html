@@ -1,0 +1,82 @@
+<html>
+<head>
+
+</head>
+
+<body>
+<form name="frm" id="frm" action="">
+First Name : <input type="text" name="fname" id="fname" value=""/></br></br>
+Last Name : <input type="text" name="lname" id="lname" value=""/></br></br>
+Gender : <input type="radio" name="gender" id="male"  value="m">Male
+		<input type="radio" name="gender" id="female" value="f">Female</br></br>
+State : <select name="state" id="state">
+		<option value="">Choose State</option>
+		<option value="NJ">New Jersey</option>
+		<option value="NY">New York</option>
+		<option value="PA">Pennsylvania</option>
+		<option value="VA">Virginia</option>
+		<option value="MD">Maryland</option>
+		<option value="NC">North Corolina</option>
+		<option value="CT">Connecticut</option>		
+		</select></br></br>
+	<input type="checkbox" value="term" name="term" id="term"/> I accept terms and conditions.</br></br>
+	<input type="submit" name="submit" id="submit" value="Submit">
+	<br>
+	    If the First Name and Last Name fields are left blank or has a number, the background color of the text box should change to red color.<br>
+    If the Gender is not selected, alert the user to select at least one option.<br>
+    If the State is not selected, alert the user to select a state.<br>
+    If the check box is not selected, alert the user to check the box.<br>
+
+</form>
+<script type="text/javascript">
+	var fname = document.getElementById("fname");
+	var lname = document.getElementById("lname");
+	var male = document.getElementById("male");
+	var female = document.getElementById("female");
+	var state = document.getElementById("state");
+	var term = document.getElementById("term");
+	
+	
+	fname.onkeypress = function(){
+	fname.style.backgroundColor="white";};
+	
+	document.getElementById("frm").onsubmit = function(){
+	var reg = /^[A-Za-z]+$/;  
+	
+    if(fname.value == "" || !fname.value.match(reg))
+	{
+		fname.style.backgroundColor="red";
+		fname.focus();
+		return false;
+	}if(lname.value == "" || !lname.value.match(reg))
+	{
+		lname.style.backgroundColor="red";
+		lname.focus();
+		return false;
+	}
+	if(!(male.checked) && !(female.checked))
+	{
+		alert("Please select altleast one option for Gender.");
+		male.focus();
+		return false;
+	}
+	if(state.value == "")
+	{
+		alert("Please select state");
+		state.focus();
+		return false;
+	}
+	if(!(term.checked))
+	{
+		alert("Please check the checkbox for terms & conditions");
+		term.focus();
+		return false;
+	}
+	
+	
+};
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<html>
+<head>
+<style>
+body{
+padding:50px;
+}
+#wrapper{
+	/*border:1px black solid;*/
+	margin:auto;
+	overflow:auto;
+}
+#left{
+	border:1px black solid;
+	padding:20px;
+	width:50%;
+	float:left;
+	box-sizing: border-box;
+	height:250px;
+}
+#right{
+	border:1px black solid;
+	padding:20px;
+	width:50%;
+	float:left;
+	box-sizing: border-box;
+	height:250px;
+}
+.chk{
+	margin :10px;
+}
+span.disp{
+	display:block;
+}
+</style>
+</head>
+<body>
+<div id="wrapper">
+<div id="left">
+<form id="frm" name="frm">
+<span class="disp"><input class="chk" type="checkbox" name="fruit" id="fruit[]" value="Apple">Apple</span>
+<span class="disp"><input class="chk" type="checkbox" name="fruit" id="fruit[]" value="Mango">Mango</span>
+<span class="disp"><input class="chk" type="checkbox" name="fruit" id="fruit[]" value="Grape">Grape</span>
+<span class="disp"><input type="checkbox" name="fruit" id="fruit[]" value="Strawberry" class="chk">Strawberry</span>
+<span class="disp"><input type="checkbox" name="fruit" id="fruit[]" value="Cherry" class="chk">Cherry</span>
+</div>
+<div id="right">
+</div></div>
+
+</form>
+<script>
+
+var chk = document.getElementsByName("fruit");
+var rightdiv = document.getElementById("right");
+for(var i=0; i<chk.length;i++)
+{
+	chk[i].onclick=function(){
+	var val = this.value;
+	if(this.checked)
+	{
+		var ele = document.createElement("div");
+		ele.setAttribute("id",val);
+		ele.setAttribute("style","margin:10px");
+		var divtxt = document.createTextNode(val);
+		ele.appendChild(divtxt);
+		rightdiv.appendChild(ele);
+	}
+	else
+	{
+		var nm = document.getElementById(val);
+		rightdiv.removeChild(nm);
+	}
+	
+}
+	};
+</script>
+</body>
+</html>

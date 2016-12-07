@@ -1,0 +1,131 @@
+<html>
+<head>
+<style>
+body{
+padding:50px;
+}
+#wrapper{
+	border:1px black solid;
+	margin:auto;
+	overflow:auto;
+	height:auto;
+	min-height:300px;
+}
+#left{
+	border-right:1px black solid;
+	padding:20px;
+	width:50%;
+	float:left;
+	box-sizing: border-box;
+	/*height:auto;*/
+}
+#right{
+	/*border:1px black solid;*/
+	padding:20px;
+	width:50%;
+	float:left;
+	box-sizing: border-box;
+}
+
+ul li{
+	display:block;
+	margin:20px;
+}
+</style>
+</head>
+<body>
+<div id="wrapper">
+	<div id="left">
+	<input type="button" name="btn" id="btn" class="btn" value="Create New Checkbox">
+		<form id="frm" name="frm">
+		<ul id="main">
+		<li><input class="chk" type="checkbox" name="fruit" id="fruit[]" value="Apple"><span>Apple123</span></li>
+		<li><input class="chk" type="checkbox" name="fruit" id="fruit[]" value="Mango"><span>Mango123</span></li>
+		<li><input class="chk" type="checkbox" name="fruit" id="fruit[]" value="Grape"><span>Grape</span></li>
+		<li><input class="chk" type="checkbox" name="fruit" id="fruit[]" value="Strawberry"><span>Strawberry</span></li>
+		<li><input class="chk" type="checkbox" name="fruit" id="fruit[]" value="Cherry"><span>Cherry</span></li>
+		</ul>
+		</form>
+	</div>
+<div id="right">
+	<ul id="dispFruit"></ul>
+</div>
+
+</div>
+
+</form>
+<script>
+
+var divs = document.getElementById('wrapper');
+divs.addEventListener("click",function(e) {
+  // e = e || event;
+    var target = e.target || e.srcElement;
+	if(target.tagName == "INPUT" || target.tagName=="SPAN"){
+		if(target.tagName == "SPAN"){
+			val = target.previousSibling;
+			if(val.checked)
+				val.checked = false;
+			else
+				val.checked = true;
+			disp.call(val);
+		}
+		else
+			disp.call(target);
+	}
+	if(target.id == "btn")
+		addlist();
+
+  });
+
+function disp(){
+	if(this.checked){
+		var ele = document.createElement("li");
+		dispFruit.appendChild(ele);
+		ele.innerHTML = this.nextSibling.innerHTML;
+	}
+	else{
+		var len = dispFruit.childNodes.length;
+		for(var i=0;i<len;i++){
+			if(this.nextSibling.innerHTML == dispFruit.childNodes[i].innerHTML){
+				dispFruit.removeChild(dispFruit.childNodes[i]);
+				break;
+			}
+		}
+	}	
+}
+function addlist(){
+	var getchkval = prompt("Please Enter Checkbox Value/Text");
+	var newli = document.createElement("li");
+	var newchk = document.createElement("input");
+	newchk.setAttribute("type","checkbox");
+	newchk.setAttribute("name","fruit");
+	newchk.setAttribute("id","fruit[]");
+	newchk.setAttribute("class","chk");
+	newchk.setAttribute("value",getchkval);
+	var  newchkval = document.createElement("span");
+	document.getElementById("main").appendChild(newli);
+	newli.appendChild(newchk);
+	newli.appendChild(newchkval);
+	newchkval.innerHTML = getchkval;
+};
+</script>
+</body>
+</html>
+<!---
+event bubbling
+event capturing
+event object
+event with target
+
+//var target = event.target || event.srcElement
+-->
+
+
+
+<!--
+event bubbling
+event capturing
+event object
+event with target
+career.guru99.com
+-->

@@ -1,0 +1,101 @@
+<html>
+<head>
+<style>
+body{
+padding:50px;
+}
+#wrapper{
+	border:1px black solid;
+	margin:auto;
+	overflow:auto;
+	height:auto;
+	min-height:300px;
+}
+#left{
+	border-right:1px black solid;
+	padding:20px;
+	width:50%;
+	float:left;
+	box-sizing: border-box;
+	/*height:auto;*/
+}
+#right{
+	/*border:1px black solid;*/
+	padding:20px;
+	width:50%;
+	float:left;
+	box-sizing: border-box;
+}
+
+ul li{
+	display:block;
+	margin:20px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$( "#main" ).on( "click","input.chk", disp );
+	$( "input.btn[type=button]" ).on( "click", addlist );
+});
+
+function disp(){
+
+	if($(this).is(":checked")){
+		$("#dispFruit").append("<li>"+$(this).next().html()+"</li>");
+	}
+	else{
+		$("#dispFruit > li:contains("+$(this).next().html()+")").remove();
+	}	
+}
+
+function addlist(){
+	var getchkval = prompt("Please Enter Checkbox Value/Text");
+	$("#main").append($("<li>",{html:$("<input>",{id:getchkval,class:"chk",name:"fruit",value:getchkval,type:"checkbox"})}).append(
+					 $("<label>",{for:getchkval,html:getchkval})));
+	
+};
+</script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="left">
+	<input type="button" name="btn" id="btn" class="btn" value="Create New Checkbox">
+		<form id="frm" name="frm">
+		<ul id="main">
+		<li><input class="chk" type="checkbox" name="fruit" id="apple" value="Apple"><label for="apple">Apple123</label></li>
+		<li><input class="chk" type="checkbox" name="fruit" id="mango" value="Mango"><label for="mango">Mango123</label></li>
+		<li><input class="chk" type="checkbox" name="fruit" id="grape" value="Grape"><label for="grape">Grape</label></li>
+		<li><input class="chk" type="checkbox" name="fruit" id="strawberry" value="Strawberry"><label for="strawberry">Strawberry</label></li>
+		<li><input class="chk" type="checkbox" name="fruit" id="cherry" value="Cherry"><label for="cherry">Cherry</label></li>
+		</ul>
+		</form>
+	</div>
+<div id="right">
+	<ul id="dispFruit"></ul>
+</div>
+
+</div>
+
+</form>
+</body>
+
+</html>
+<!---
+event bubbling
+event capturing
+event object
+event with target
+
+//var target = event.target || event.srcElement
+-->
+
+
+
+<!--
+event bubbling
+event capturing
+event object
+event with target
+career.guru99.com
+-->
